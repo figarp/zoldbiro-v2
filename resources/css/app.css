@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body, html {
+    scroll-behavior: smooth;
+}
+
+.mainBody {
+    background-image: url("/public/assets/images/background-min.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
