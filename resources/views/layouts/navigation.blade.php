@@ -18,6 +18,9 @@
                     <x-nav-link :href="route('dashboard.services')" :active="request()->routeIs('dashboard.services')">
                         {{ __('Szolgáltatások') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('dashboard.orders')" :active="request()->routeIs('dashboard.orders')">
+                        {{ __('Megrendelések') }}
+                    </x-nav-link>
                 </div>
             </div>
 
