@@ -25,7 +25,8 @@
                             </thead>
                             <tbody>
                                 @foreach ($services as $service)
-                                    <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
+                                    <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700 
+                                        {{ !$service->visible ? 'text-red-600 line-through' : '' }}">
                                         <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                             {{ $service->name }}
                                         </th>
@@ -33,16 +34,24 @@
                                         <td class="px-6 py-4">{{ $service->price }}</td>
                                         <td class="px-6 py-4">
                                             <a href="{{ route('dashboard.services.edit', $service->id) }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Szerkesztés</a> |
-                                            <form action="{{ route('dashboard.services.destroy', $service->id) }}" method="POST" style="display:inline;">
-                                                @csrf
-                                                @method('DELETE')
-                                                <button type="submit" class="font-medium text-red-600 dark:text-red-500 hover:underline">Törlés</button>
-                                            </form>
+                                            @if ($service->visible)
+                                                <form action="{{ route('dashboard.services.destroy', $service->id) }}" method="POST" style="display:inline;">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class="font-medium text-red-600 dark:text-red-500 hover:underline">Eltávolítás</button>
+                                                </form>
+                                            @else
+                                                <form action="{{ route('dashboard.services.restore', $service->id) }}" method="POST" style="display:inline;">
+                                                    @csrf
+                                                    @method('PUT')
+                                                    <button type="submit" class="font-medium text-green-600 dark:text-green-500 hover:underline">Visszaállítás</button>
+                                                </form>
+                                            @endif
                                         </td>
                                     </tr>
                                 @endforeach
                             </tbody>
-                        </table>
+                        </table>                        
                     </div>
                     
                 </div>
