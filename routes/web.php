@@ -19,6 +19,7 @@ Route::post('dashboard/services/store', [ServiceController::class, 'store'])->mi
 Route::delete('dashboard/services/destroy/{id}', [ServiceController::class, 'destroy'])->middleware(['auth', 'verified'])->name('dashboard.services.destroy');
 Route::get('dashboard/services/edit/{id}', [ServiceController::class, 'edit'])->middleware(['auth', 'verified'])->name('dashboard.services.edit');
 Route::post('dashboard/services/update/{id}', [ServiceController::class, 'update'])->middleware(['auth', 'verified'])->name('dashboard.services.update');
+Route::put('dashboard/services/{id}/restore', [ServiceController::class, 'restore'])->middleware(['auth', 'verified'])->name('dashboard.services.restore');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

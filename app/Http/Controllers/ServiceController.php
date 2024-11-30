@@ -82,11 +82,20 @@ class ServiceController extends Controller
         return redirect()->route('dashboard.services');
     }
 
-    // Szolgáltatás törlése
     public function destroy($id)
     {
         $service = Service::findOrFail($id);
-        $service->delete();
+        // Állítsuk be a 'visible' értéket false-ra
+        $service->update(['visible' => false]);
+
+        return redirect()->route('dashboard.services');
+    }
+
+    public function restore($id)
+    {
+        $service = Service::findOrFail($id);
+        // Állítsuk vissza a 'visible' értéket true-ra
+        $service->update(['visible' => true]);
 
         return redirect()->route('dashboard.services');
     }
