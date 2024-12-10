@@ -13,11 +13,17 @@ class Service extends Model
         'name',
         'description',
         'price',
-        'image_url',
+        'image_id',
         'visible',
     ];
 
     protected $casts = [
         'visible' => 'boolean',
     ];
+
+    // Kapcsolat az Image modellel
+    public function image()
+    {
+        return $this->belongsTo(Image::class, 'image_id');
+    }
 }

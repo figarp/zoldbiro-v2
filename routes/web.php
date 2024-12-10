@@ -5,6 +5,7 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\ImageController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -28,10 +29,19 @@ Route::put('dashboard/services/{id}/restore', [ServiceController::class, 'restor
 Route::get('dashboard/orders', [OrderController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard.orders');
 Route::put('dashboard/orders/{order}', [OrderController::class, 'update'])->middleware(['auth', 'verified'])->name('dashboard.orders.update');
 
+Route::get('image-upload', [ImageController::class, 'index']);
+Route::post('image-upload', [ImageController::class, 'store'])->name('image.store');
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+Route::middleware('auth')->group(function () {
+    Route::get('/images', [ImageController::class, 'index']);
+    Route::post('/images', [ImageController::class, 'store']);
+    Route::post('/images/delete', [ImageController::class, 'delete']);
 });
 
 require __DIR__.'/auth.php';

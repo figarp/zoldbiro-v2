@@ -54,9 +54,9 @@
                                         @csrf
                                         @method('PUT')
                                         <button type="submit" name="status" value="completed"
-                                            class="text-green-500 hover:underline">Teljesítve</button>
+                                            class="text-green-500 hover:underline">Teljesítés</button>
                                         <button type="submit" name="status" value="rejected"
-                                            class="text-red-500 hover:underline ml-2">Elutasítva</button>
+                                            class="text-red-500 hover:underline ml-2">Elutasítás</button>
                                     </form>
                                 @endif
                             </td>

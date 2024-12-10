@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
-<div class="max-w-4xl mx-auto mt-10 mt-24 bg-white p-6 shadow-lg rounded-lg">
+<div class="max-w-4xl mx-auto mt-24 bg-white p-6 shadow-lg rounded-lg">
     <h1 class="text-2xl font-bold mb-4">Rendelés leadása sikeres!</h1>
     <p class="text-gray-700">Köszönjük, hogy leadta rendelését, {{ $order->customer_first_name }}!</p>
     <p class="text-gray-700">Hamarosan felvesszük Önnel a kapcsolatot a megadott elérhetőségek valamelyikén.</p>
@@ -18,6 +18,7 @@
             @if($order->comment)
                 <li><strong>Megjegyzés:</strong> {{ $order->comment }}</li>
             @endif
+            <li><strong>Várható árazás:</strong> {{ $order->service->price }}</li>
         </ul>
     </div>
 

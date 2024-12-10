@@ -16,7 +16,6 @@ return new class extends Migration
             $table->string('name'); // Szolgáltatás neve
             $table->text('description'); // Hosszabb leírás
             $table->text('price'); // Árat szövegesen tároljuk
-            $table->string('image_url')->nullable(); // Opcionális kép URL
             $table->boolean('visible')->default(true); // Láthatóság
             $table->timestamps();
         });

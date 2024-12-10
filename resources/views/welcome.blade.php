@@ -20,7 +20,7 @@
                                     szolgálja!
                                 </p>
                                 <div class="flex justify-start space-x-4">
-                                    <a href="#features"
+                                    <a href="{{route('orders.create')}}"
                                         class="bg-white text-green-600 py-3 px-6 rounded-lg text-sm md:text-base font-semibold hover:bg-gray-100 transition">
                                         Kérjen árajánlatot még ma!
                                     </a>
@@ -45,7 +45,7 @@
                                     szolgálja!
                                 </p>
                                 <div class="flex justify-start space-x-4">
-                                    <a href="#features"
+                                    <a href="{{route('orders.create')}}"
                                         class="bg-white text-green-600 py-3 px-6 rounded-lg text-sm md:text-base font-semibold hover:bg-gray-100 transition">
                                         Kérjen árajánlatot még ma!
                                     </a>
@@ -103,7 +103,7 @@
                 <h3 class="text-green-800 mb-2">Fűnyírás</h3>
                 <p class="text-gray-600 mb-5">Tökéletesen ápolt pázsit, gyors és precíz fűnyírás a legjobb eredményért.
                 </p>
-                <a href="#fűnyírás"
+                <a href="{{route('orders.create')}}"
                     class="inline-block px-6 py-3 bg-green-700 text-white rounded-lg hover:bg-green-800 transition">Tudjon
                     meg többet!</a>
             </div>
@@ -115,7 +115,7 @@
                 <h3 class="text-green-800 mb-2">Kertgondozás</h3>
                 <p class="text-gray-600 mb-5">Gondoskodunk a kerted minden apró részletéről, a metszéstől kezdve a fák
                     és virágok ápolásáig.</p>
-                <a href="#kertgondozás"
+                <a href="{{route('orders.create')}}"
                     class="inline-block px-6 py-3 bg-green-700 text-white rounded-lg hover:bg-green-800 transition">Tudjon
                     meg többet!</a>
             </div>
@@ -127,7 +127,7 @@
                 <h3 class="text-green-800 mb-2">Klímatisztítás</h3>
                 <p class="text-gray-600 mb-5">Hűvös otthon egész évben. Szakszerű telepítés és karbantartás
                     légkondicionálókhoz.</p>
-                <a href="#légkondi"
+                <a href="{{route('orders.create')}}"
                     class="inline-block px-6 py-3 bg-green-700 text-white rounded-lg hover:bg-green-800 transition">Tudjon
                     meg többet!</a>
             </div>
@@ -136,17 +136,17 @@
 
     <section class="bg-black bg-opacity-50 text-white py-16 pt-28">
         <h2 class="text-center text-2xl pb-6">Szolgáltatásaink részletes listáját
-            <a href="/" class="underline font-bold" title="szolgáltatások teljes listája">ide kattintva</a>
+            <a href="{{route('services.index')}}" class="underline font-bold" title="szolgáltatások teljes listája">ide kattintva</a>
             tekintheti meg!
         </h2>
     </section>
 
-    <section class="pt-12 bg-gray-100 pb-7" id="gallery">
+    {{-- <section class="pt-12 bg-gray-100 pb-7" id="gallery">
         <div class="container mx-auto px-4 text-center">
             <h2 class="text-3xl font-semibold pb-7">
                 Galéria
             </h2>
             <x-gallery />
         </div>
-    </section>
+    </section> --}}
 @endsection

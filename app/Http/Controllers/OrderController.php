@@ -42,7 +42,7 @@ class OrderController extends Controller
      */
     public function create()
     {
-        $services = Service::all();
+        $services = Service::where('visible', true)->get();
         return view('orders.create', compact('services'));
     }
 

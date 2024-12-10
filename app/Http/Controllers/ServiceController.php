@@ -43,19 +43,27 @@ class ServiceController extends Controller
             'name' => 'required|string|max:255',
             'description' => 'required|string',
             'price' => 'required|string',
-            'image_url' => 'nullable|url',
+            'image_id' => 'nullable|exists:images,id', // Az image_id csak akkor érvényes, ha az létezik az images táblában
             'visible' => 'boolean',
         ]);
 
-        Service::create($validated);
+        // Új szolgáltatás létrehozása
+        $service = Service::create([
+            'name' => $validated['name'],
+            'description' => $validated['description'],
+            'price' => $validated['price'],
+            'image_id' => $validated['image_id'], // Az image_id az inputból jön
+            'visible' => $validated['visible'] ?? true,
+        ]);
 
+        // Naplózás
         $log = [
             "type" => 'Szolgáltatás',
-            "change" => 'Új szolgáltatás lett létrehozva: ' . $request->get("name")
+            "change" => 'Új szolgáltatás lett létrehozva: ' . $request->get("name"),
         ];
         Changelog::create($log);
 
-        return redirect()->route('dashboard.services');
+        return redirect()->route('dashboard.services')->with('success', 'Szolgáltatás sikeresen létrehozva!');
     }
 
     // Szolgáltatás szerkesztése
