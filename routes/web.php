@@ -9,7 +9,7 @@ use App\Http\Controllers\ImageController;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
 
 Route::get('services', [ServiceController::class, 'index'])->name('services.index');
 
