@@ -12,3 +12,7 @@ body, html {
     background-attachment: fixed;
     background-repeat: no-repeat;
 }
+
+#mainHeader {
+    background-color:rgba(0, 0, 0, 0.5);
+}
