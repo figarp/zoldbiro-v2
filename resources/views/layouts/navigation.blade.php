@@ -76,6 +76,12 @@
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('dashboard.services')" :active="request()->routeIs('dashboard.services')">
+                {{ __('Szolgáltatások') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link  :href="route('dashboard.orders')" :active="request()->routeIs('dashboard.orders')">
+                {{ __('Rendelések') }}
+            </x-responsive-nav-link>
         </div>
 
         <!-- Responsive Settings Options -->
