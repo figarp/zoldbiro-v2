@@ -23,18 +23,27 @@ scrollToTopBtn.onclick = function() {
     window.scrollTo({ top: 0, behavior: "smooth" });
 };
 
-// const carouselElement = document.getElementById('default-carousel');
+const slides = document.querySelectorAll('#slider > div');
+    const buttons = document.querySelectorAll('[data-slide]');
+    let currentSlide = 0;
 
-// const options = {
-//     defaultPosition: 1,
-//     interval: 12000,
-// }
+    function showSlide(index) {
+      slides[currentSlide].style.opacity = '0';
+      currentSlide = index;
+      slides[currentSlide].style.opacity = '1';
+    }
 
-// const instanceOptions = {
-//     id: 'default-example',
-//     override: true
-//   };
+    function autoSwitchSlides() {
+      setInterval(() => {
+        const nextSlide = (currentSlide + 1) % slides.length;
+        showSlide(nextSlide);
+      }, 5000); // 5 seconds interval
+    }
 
-// const carousel = new Carousel(carouselElement, items, options, instanceOptions);
-// carousel.cycle();
+    buttons.forEach((button, index) => {
+      button.addEventListener('click', () => {
+        showSlide(index);
+      });
+    });
 
+    autoSwitchSlides();
