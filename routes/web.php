@@ -5,6 +5,7 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\ImageController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -32,6 +33,13 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/dashboard/gallery', [ImageController::class, 'index'])->name('dashboard.gallery.index');
+    Route::get('/dashboard/gallery/create', [ImageController::class, 'create'])->name('dashboard.gallery.create');
+    Route::post('/dashboard/gallery', [ImageController::class, 'store'])->name('dashboard.gallery.store');
+    Route::delete('/dashboard/gallery/{image}', [ImageController::class, 'destroy'])->name('dashboard.gallery.destroy');
 });
 
 

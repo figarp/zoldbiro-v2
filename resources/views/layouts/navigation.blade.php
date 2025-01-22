@@ -21,6 +21,9 @@
                     <x-nav-link :href="route('dashboard.orders')" :active="request()->routeIs('dashboard.orders')">
                         {{ __('Megrendelések') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('dashboard.gallery.index')" :active="request()->routeIs('dashboard.gallery.index')">
+                        {{ __('Galéria') }}
+                    </x-nav-link>
                 </div>
             </div>
 
@@ -81,6 +84,9 @@
             </x-responsive-nav-link>
             <x-responsive-nav-link  :href="route('dashboard.orders')" :active="request()->routeIs('dashboard.orders')">
                 {{ __('Rendelések') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link  :href="route('dashboard.gallery.index')" :active="request()->routeIs('dashboard.gallery.index')">
+                {{ __('Galéria') }}
             </x-responsive-nav-link>
         </div>
 
