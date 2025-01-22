@@ -9,7 +9,10 @@
         <div class="text-center text-white max-w-2xl px-6">
           <img src="{{asset('assets/images/zoldbiro_logo.PNG')}}" alt="Image 1" class="mx-auto mb-6 rounded-lg w-full max-w-lg">
           <h1 class="text-4xl md:text-5xl font-bold mb-4">Zöldbirodalom Plusz</h1>
-          <p class="text-lg md:text-xl mb-6">Fűnyírás, kerti munkák és légkondi szerelés – minden, ami otthonod kényelmét és környezeted szépségét szolgálja!</p>
+          <div class="text-center">
+                <p class="text-lg md:text-xl mb-6">Fűnyírás, fűkaszálás, gyepszellőztetés, gyeplyuggatás</p>
+                <p class="text-lg md:text-xl mb-6">Kiskunmajsán és területén</p>
+          </div>
           <a href="{{route('orders.create')}}" class="inline-block bg-blue-500 hover:bg-blue-600 text-white font-medium py-3 px-6 rounded-lg transition">Kérjen ajánlatot még ma!</a>
         </div>
       </div>
@@ -19,7 +22,11 @@
         <div class="text-center text-white max-w-2xl px-6">
           <img src="{{asset('assets/images/coolzone_logo.png')}}" alt="Image 2" class="mx-auto mb-6 rounded-lg shadow-lg w-full max-w-lg">
           <h1 class="text-4xl md:text-5xl font-bold mb-4">Coolzone</h1>
-          <p class="text-lg md:text-xl mb-6">Fűnyírás, kerti munkák és légkondi szerelés – minden, ami otthonod kényelmét és környezeted szépségét szolgálja!</p>
+          <div class="text-center">
+              <p class="text-lg md:text-xl mb-6">Klímatelepítés, hőszivattyútelepítés</p>
+              <p class="text-lg md:text-xl mb-6">Klíma készülékek javítása, karbantartása, tisztítása és fertőtlenítése</p>
+              <p class="text-lg md:text-xl mb-6">Autó klíma javítás, karbantartás</p>
+          </div>
           <a href="{{route('orders.create')}}" class="inline-block bg-green-500 hover:bg-green-600 text-white font-medium py-3 px-6 rounded-lg transition">Kérjen ajánlatot még ma</a>
         </div>
       </div>
